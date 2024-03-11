@@ -70,7 +70,7 @@ const service = {
   },
 };
 
-const xml = require("fs").readFileSync("ESLPaymentService.wsdl", "utf8");
+const xml = require("fs").readFileSync("ESLPaymentServiceRender.wsdl", "utf8");
 ESLTele.listen("8001", () => {
   const test = soap.listen(ESLTele, "/ESLPayment", service, xml, function () {
     console.log("server initialized");
@@ -90,8 +90,7 @@ ESLTele.listen("8001", () => {
     console.log(nonce);
     const return1 =
       user === "user" &&
-      password ===
-        soap.passwordDigest(nonce, created, "password");
+      password === soap.passwordDigest(nonce, created, "password");
     return return1;
   };
 });

@@ -156,7 +156,7 @@
   </wsdl:binding>
   <wsdl:service name="ESLPaymentService">
     <wsdl:port binding="eslpay:ESLPaymentPortBinding" name="ESLPaymentPort">
-      <soap:address location="http://https://teleeslbed.onrender.com/ESLPayment"/>
+      <soap:address location="https://teleeslbed.onrender.com/ESLPayment"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
