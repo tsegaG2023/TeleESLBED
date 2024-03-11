@@ -85,13 +85,13 @@ ESLTele.listen("8001", () => {
       (user = token.Username),
       (password = token.Password.$value),
       // (nonce = token.Nonce.$value + "11"),
-      // (nonce = token.Nonce.$value),
+      (nonce = token.Nonce.$value),
       (created = token.Created);
     console.log(nonce);
     const return1 =
       user === "user" &&
       password ===
-        soap.passwordDigest("KCoYXfSfnfx1zJot+B9CWw1==", created, "password");
+        soap.passwordDigest(nonce, created, "password");
     return return1;
   };
 });
