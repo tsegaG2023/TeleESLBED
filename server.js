@@ -75,22 +75,22 @@ ESLTele.listen("8001", () => {
   const test = soap.listen(ESLTele, "/ESLPayment", service, xml, function () {
     console.log("server initialized");
   });
-  test.authorizeConnection = function (req) {
-    console.log("this is authorizeConnection");
-    return true;
-  };
-  test.authenticate = function (security) {
-    var created, nonce, password, user, token;
-    (token = security.UsernameToken),
-      (user = token.Username),
-      (password = token.Password.$value),
-      // (nonce = token.Nonce.$value + "11"),
-      (nonce = token.Nonce.$value),
-      (created = token.Created);
-    console.log(nonce);
-    const return1 =
-      user === "user" &&
-      password === soap.passwordDigest(nonce, created, "password");
-    return return1;
-  };
+  // test.authorizeConnection = function (req) {
+  //   console.log("this is authorizeConnection");
+  //   return true;
+  // };
+  // test.authenticate = function (security) {
+  //   var created, nonce, password, user, token;
+  //   (token = security.UsernameToken),
+  //     (user = token.Username),
+  //     (password = token.Password.$value),
+  //     // (nonce = token.Nonce.$value + "11"),
+  //     (nonce = token.Nonce.$value),
+  //     (created = token.Created);
+  //   console.log(nonce);
+  //   const return1 =
+  //     user === "user" &&
+  //     password === soap.passwordDigest(nonce, created, "password");
+  //   return return1;
+  // };
 });
